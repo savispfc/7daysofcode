@@ -1,0 +1,30 @@
+/* Reset CSS básico */
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Sua Fonte Escolhida', sans-serif;
+    /* Defina outras propriedades de fonte, cor de fundo, etc. */
+}
+
+/* Defina variáveis para cores, tamanhos, etc */
+:root {
+    --cor-primaria: #355C7D;
+    --cor-secundaria: #6C5B7B;
+    /* Adicione mais variáveis conforme necessário */
+}
+
+/* Defina estilos para cabeçalho, main, rodapé, etc */
+header {
+    /* Estilos para o cabeçalho */
+}
+
+main {
+    /* Estilos para o conteúdo principal */
+}
+
+footer {
+    /* Estilos para o rodapé */
+}
