@@ -1,4 +1,4 @@
-/* Reset CSS b·sico */
+/* Reset CSS b√°sico */
 body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
     padding: 0;
@@ -9,22 +9,22 @@ body {
     /* Defina outras propriedades de fonte, cor de fundo, etc. */
 }
 
-/* Defina vari·veis para cores, tamanhos, etc */
+/* Defina vari√°veis para cores, tamanhos, etc */
 :root {
     --cor-primaria: #355C7D;
     --cor-secundaria: #6C5B7B;
-    /* Adicione mais vari·veis conforme necess·rio */
+    /* Adicione mais vari√°veis conforme necess√°rio */
 }
 
-/* Defina estilos para cabeÁalho, main, rodapÈ, etc */
+/* Defina estilos para cabe√ßalho, main, rodap√©, etc */
 header {
-    /* Estilos para o cabeÁalho */
+    /* Estilos para o cabe√ßalho */
 }
 
 main {
-    /* Estilos para o conte˙do principal */
+    /* Estilos para o conte√∫do principal */
 }
 
 footer {
-    /* Estilos para o rodapÈ */
+    /* Estilos para o rodap√© */
 }
