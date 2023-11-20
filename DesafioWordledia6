@@ -1,0 +1,56 @@
+<div class="keyboard">
+    <button class="key">A</button>
+    <button class="key">B</button>
+    <button class="key">C</button>
+    <button class="key">Ç</button>
+    <button class="key">D</button>
+    <button class="key">E</button>
+    <button class="key">F</button>
+    <button class="key">G</button>
+    <button class="key">H</button>
+    <button class="key">I</button>
+    <button class="key">J</button>
+    <button class="key">K</button>
+    <button class="key">L</button>
+    <button class="key">M</button>
+    <button class="key">N</button>
+    <button class="key">O</button>
+    <button class="key">P</button>
+    <button class="key">Q</button>
+    <button class="key">R</button>
+    <button class="key">S</button>
+    <button class="key">T</button>
+    <button class="key">U</button>
+    <button class="key">V</button>
+    <button class="key">W</button>
+    <button class="key">X</button>
+    <button class="key">Y</button>
+    <button class="key">Z</button>
+</div>
+const wordToGuess = "maçãs"; 
+let userGuess = "pares";
+
+const checkGuessAndUpdateKeyboard = () => {
+   for (let i = 0; i < userGuess.length; i++) {
+        const key = document.querySelectorAll('.key')[i];
+        const guessedLetter = userGuess[i];
+
+        if (guessedLetter === wordToGuess[i]) {
+            key.style.backgroundColor = 'green';
+        } else if (wordToGuess.includes(guessedLetter)) {
+            key.style.backgroundColor = 'yellow';
+        } else {
+            key.style.backgroundColor = 'gray';
+        }
+    }
+};
+
+const keys = document.querySelectorAll('.key');
+keys.forEach((key, index) => {
+    key.addEventListener('click', () => {
+        userGuess = userGuess.substring(0, index) + key.textContent + userGuess.substring(index + 1);
+        
+        checkGuessAndUpdateKeyboard();
+    });
+});
+
