@@ -1,0 +1,64 @@
+const area = prompt("Escolha sua área: Front-End ou Back-End?");
+if (area.toLowerCase() === "front-end") {
+const feChoice = prompt("Escolha entre React ou Vue para aprender:");
+    if (feChoice.toLowerCase() === "react") {
+        const fePath = prompt("Deseja se especializar ou ser Fullstack em Front-End?");
+        if (fePath.toLowerCase() === "especializar") {
+            alert("Você escolheu se especializar em React. Parabéns pela escolha!");
+        } else if (fePath.toLowerCase() === "fullstack") {
+            alert("Você escolheu se tornar um desenvolvedor Fullstack em Front-End. Ótima decisão!");
+        } else {
+            alert("Opção inválida!");
+        }
+    } else if (feChoice.toLowerCase() === "vue") {
+        const fePath = prompt("Deseja se especializar ou ser Fullstack em Front-End?");
+        if (fePath.toLowerCase() === "especializar") {
+            alert("Você escolheu se especializar em Vue. Ótima escolha!");
+        } else if (fePath.toLowerCase() === "fullstack") {
+            alert("Você escolheu se tornar um desenvolvedor Fullstack em Front-End. Parabéns!");
+        } else {
+            alert("Opção inválida!");
+        }
+    } else {
+        alert("Opção inválida!");
+    }
+} else if (area.toLowerCase() === "back-end") {
+    const beChoice = prompt("Escolha entre C# ou Java para aprender:");
+    if (beChoice.toLowerCase() === "c#") {
+        const bePath = prompt("Deseja se especializar ou ser Fullstack em Back-End?");
+        if (bePath.toLowerCase() === "especializar") {
+            alert("Você escolheu se especializar em C#. Excelente decisão!");
+        } else if (bePath.toLowerCase() === "fullstack") {
+            alert("Você escolheu se tornar um desenvolvedor Fullstack em Back-End. Ótima escolha!");
+        } else {
+            alert("Opção inválida!");
+        }
+    } else if (beChoice.toLowerCase() === "java") {
+        const bePath = prompt("Deseja se especializar ou ser Fullstack em Back-End?");
+        if (bePath.toLowerCase() === "especializar") {
+            alert("Você escolheu se especializar em Java. Parabéns!");
+        } else if (bePath.toLowerCase() === "fullstack") {
+            alert("Você escolheu se tornar um desenvolvedor Fullstack em Back-End. Ótimo caminho!");
+        } else {
+            alert("Opção inválida!");
+        }
+    } else {
+        alert("Opção inválida!");
+    }
+} else {
+    alert("Opção inválida!");
+}
+
+let technologies = [];
+let moreTechnologies = true;
+
+while (moreTechnologies) {
+    const technology = prompt("Qual tecnologia você gostaria de aprender?");
+    technologies.push(technology);
+    const answer = prompt("Tem mais alguma tecnologia que você gostaria de aprender? (OK para sim, Cancelar para não)");
+    if (answer.toLowerCase() !== "ok") {
+        moreTechnologies = false;
+    }
+}
+
+alert(`Você escolheu aprender: ${technologies.join(", ")}. Bom aprendizado!`);
