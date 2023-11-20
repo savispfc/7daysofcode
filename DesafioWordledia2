@@ -1,0 +1,35 @@
+{
+  "words": ["casas", "carros", "jesus", "gatos", "seres", "maçãs"]
+}
+const loadWords = async () => {
+  try {
+    const response = await fetch('./json/words-list.json');
+    if (!response.ok) {
+      throw new Error('Falha ao carregar as palavras.');
+    }
+    const data = await response.json();
+    return data.words;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({ words: ['mock', 'testing'] }),
+  })
+);
+
+test('Carregar palavras corretamente', async () => {
+  const words = await loadWords();
+  expect(words).toEqual(['mock', 'testing']);
+});
+
+test('Tratar falha ao carregar palavras', async () => {
+  global.fetch.mockImplementationOnce(() =>
+    Promise.resolve({ ok: false })
+  );
+  const words = await loadWords();
+  expect(words).toEqual([]);
+});
