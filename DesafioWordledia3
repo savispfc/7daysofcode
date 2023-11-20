@@ -1,0 +1,33 @@
+let guesses = [];
+let remainingGuesses = 6;
+
+const handleKeyDown = (event) => {
+  const key = event.key.toLowerCase();
+
+  if (key === 'enter' && guesses.length === 5) {
+    handleGuess();
+  } else if (key === 'backspace' || key === 'delete') {
+    if (guesses.length > 0) {
+      guesses.pop();
+    }
+  } else if (key.length === 1 && key.match(/[a-z]/)) {
+    if (guesses.length < 5) {
+      guesses.push(key);
+    }
+  }
+};
+
+const handleGuess = () => {
+  if (guesses.length === 5 && remainingGuesses > 0) {
+    const guessedWord = guesses.join('');
+    if (isValidWord(guessedWord)) {
+      // Palpite correto - Faça algo
+    } else {
+      // Palpite incorreto - Faça algo
+    }
+    remainingGuesses--;
+    guesses = [];
+  }
+};
+
+document.addEventListener('keydown', handleKeyDown);
