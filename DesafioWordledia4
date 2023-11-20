@@ -1,0 +1,44 @@
+const wordToGuess = "apple";                       
+let userGuess = "_____"; 
+
+const checkGuess = (guess) => {
+    let correctPositions = 0;
+    let correctLetters = [];
+
+    for (let i = 0; i < guess.length; i++) {
+        const letter = guess[i];
+
+        if (letter === wordToGuess[i]) {
+            correctPositions++;
+            correctLetters.push(letter);
+        } else if (wordToGuess.includes(letter)) {
+            correctLetters.push(letter);
+        }
+    }
+
+    const guessDisplay = document.querySelector('.guess');
+    guessDisplay.innerHTML = ""; 
+
+    for (let i = 0; i < guess.length; i++) {
+        const letter = guess[i];
+        const span = document.createElement('span');
+        span.textContent = letter;
+
+        if (letter === wordToGuess[i]) {
+            span.style.backgroundColor = 'green';
+        } else if (correctLetters.includes(letter)) {
+            span.style.backgroundColor = 'yellow';
+        } else {
+            span.style.backgroundColor = 'gray';
+        }
+
+        guessDisplay.appendChild(span);
+    }
+
+    if (correctPositions === wordToGuess.length) {
+        alert('Parabéns! Você acertou a palavra!');
+    }
+};
+
+const userInput = "apple"; // Palpite inserido pelo usuário
+checkGuess(userInput);
